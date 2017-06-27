@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Task_manager.Models.TaskManager>
+@{
+    ViewBag.Title = "ViewTasks";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="clearfix">&nbsp;</div>
+    <div class="clearfix">&nbsp;</div>
+@if (Request.IsAuthenticated)
+{
+    <div class="container">
+        <div class="table-responsive">
+
+                    @Html.ActionLink("Create new", "Create", "Task") 
+            <div id="dataTable">
+            </div>
+        </div>
+    </div>
+
+     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+     <script src="~/Scripts/jquery.signalR-2.2.2.min.js"></script>
+     <script src="~/signalr/hubs"></script>
+     <script src="~/Scripts/hubscript.js"></script> 
+} 
+</body>
+</html>
